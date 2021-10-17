@@ -13,13 +13,9 @@ namespace Api
 
     public static class ApiConnection
     {
-        private const string URL = "https://api.lunarcrush.com/v2?data=assets";
-        private const string urlParameters = "&key=maba1tuhx6eib93jtv485";
-        private const string symbol = "&symbol=LTC";
-
-        public static JObject ApiFetch()
+        public static JObject ApiFetch(string URL, string urlParameters, string options, string symbol)
         {
-            var parameters = urlParameters + symbol;
+            var parameters = urlParameters + symbol + options;
 
             HttpClient client = new HttpClient();
 
