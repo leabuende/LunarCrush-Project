@@ -9,11 +9,11 @@ namespace LunarCrush_API
         static void Main(string[] args)
         {
             Console.WriteLine(
-                "Make a choice:" +
-                "1: " +
-                "2: " +
-                "3: " +
-                "4: " +
+                "Make a choice:" + Environment.NewLine +
+                "1: Get a crypto's evolution within the last week or day" + Environment.NewLine +
+                "2: " + Environment.NewLine +
+                "3: " + Environment.NewLine +
+                "4: " + Environment.NewLine +
                 "5: "
                 );
             int choice = Convert.ToInt32(Console.ReadLine());
