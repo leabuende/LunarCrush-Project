@@ -29,7 +29,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/github_username/repo_name">
+  <a href="https://github.com/leabuende/LunarCrush-Project">
     ![image](https://user-images.githubusercontent.com/46668755/137819548-c6b13502-d0b1-469e-9cae-932a5906167b.png)
   </a>
 
@@ -38,12 +38,12 @@
   <p align="center">
     Exploring the LunarCrush Cryptocurrency API in a collaborative C# project 
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/leabuende/LunarCrush-Project"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
+    <a href="https://github.com/leabuende/LunarCrush-Project/issues">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+    <a href="https://github.com/leabuende/LunarCrush-Project/issues">Request Feature</a>
   </p>
 </div>
 
@@ -177,7 +177,7 @@ Faris Chtatou, - [website](https://twitter.com/twitter_handle) - email@email_cli
 Yoni Feldman, - [website](https://twitter.com/twitter_handle) - email@email_client.com
 
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Project Link: [https://github.com/leabuende/LunarCrush-Project](https://github.com/leabuende/LunarCrush-Project)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
