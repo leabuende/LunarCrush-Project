@@ -13,6 +13,8 @@ namespace Api
 
     public static class ApiConnection
     {
+        public static readonly string apiKey = "&key=maba1tuhx6eib93jtv485";
+
         public static JObject ApiFetch(string URL, string urlParameters, string options, string symbol)
         {
             var parameters = urlParameters + symbol + options;
