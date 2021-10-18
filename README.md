@@ -30,7 +30,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/leabuende/LunarCrush-Project">
-    <img width="22" alt="logo" src="https://github.com/leabuende/LunarCrush-Project/blob/5.0/updateReadme/lunarcrush-icon-light-retro.png">
+    <img width="200" alt="logo" src="https://github.com/leabuende/LunarCrush-Project/blob/5.0/updateReadme/lunarcrush-icon-light-retro.png">
   </a>
 
 <h3 align="center">LunarCrush API</h3>
