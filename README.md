@@ -30,7 +30,9 @@
 <br />
 <div align="center">
   <a href="https://github.com/leabuende/LunarCrush-Project">
-    ![image](https://user-images.githubusercontent.com/46668755/137819548-c6b13502-d0b1-469e-9cae-932a5906167b.png)
+    ![lunarcrush-icon-light-retro](https://user-images.githubusercontent.com/46668755/137820989-8d0660c2-1e25-4ec2-97cb-554abaad606e.png)
+
+    [image](https://user-images.githubusercontent.com/46668755/137819548-c6b13502-d0b1-469e-9cae-932a5906167b.png)
   </a>
 
 <h3 align="center">LunarCrush API</h3>
