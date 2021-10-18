@@ -1,40 +1,45 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Net.Http.Headers;
+using Evolution;
+using Frequency;
+using Api;
 
-namespace Lunarcrush_Project
+namespace LunarCrush_API
 {
-    public class DataObject
+    class Program
     {
-        public string Name { get; set; }
-    }
-
-    public class Program
-    {
-        private const string URL = "https://api.lunarcrush.com/v2?data=assets?";
-        private static string urlParameters = "?api_key=y2p6tcgi3eoih3b9fbol0f";
-
         static void Main(string[] args)
         {
-            HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri(URL);
-            client.DefaultRequestHeaders.Accept.Add(
-                new MediaTypeWithQualityHeaderValue("application/json"));
-            HttpResponseMessage response = client.GetAsync(urlParameters).Result; 
-            if (response.IsSuccessStatusCode)
+            Console.WriteLine(
+                "Make a choice:" +
+                "1: " +
+                "2: " +
+                "3: " +
+                "4: " +
+                "5: "
+            );
+            int choice = Convert.ToInt32(Console.ReadLine());
+
+            switch (choice)
             {
-                var dataObjects = response.Content.ReadAsAsync<IEnumerable<DataObject>>().Result;
-                foreach (var d in dataObjects)
-                {
-                    Console.WriteLine("{0}", d.Name);
-                }
+                case 1:
+                    Console.WriteLine("Enter d for day and h for hour:");
+                    string periodChoice = Console.ReadLine();
+                    CryptoEvolution.CryptoEvolutionHour(periodChoice);
+                    return;
+                case 2:
+                    Console.WriteLine("Get the monthly frequency of new maxima for a particular currency. Enter the symbol (For example : BTC) :");
+                    CryptoFrequency.CryptoFrequencyMonth(Console.ReadLine());
+                    return;
+                case 3:
+                    Console.WriteLine("Get the monthly frequency of new maxima for 10 random cryptocurrencies :");
+                    CryptoFrequency.CryptoFrequencyTop();
+                    return;
+                
+                default:
+                    Console.WriteLine("Wrong input");
+                    break;
+                
             }
-            else
-            {
-                Console.WriteLine("{0} ({1})", (int)response.StatusCode, response.ReasonPhrase);
             }
-            client.Dispose();
-        }
     }
 }
