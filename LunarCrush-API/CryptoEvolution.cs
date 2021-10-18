@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Api;
+using ChartNet;
 
 namespace Evolution
 {
@@ -9,7 +10,7 @@ namespace Evolution
     {
         private const string URL = "https://api.lunarcrush.com/v2?data=assets";
 
-        public static void CryptoEvolutionHour(string choice)
+        public static void CryptoTrend(string choice)
         {
             string urlParameters = string.Empty;
             long unixTimeNow = DateTimeOffset.Now.ToUnixTimeSeconds();
@@ -76,6 +77,8 @@ namespace Evolution
                     Console.WriteLine("The max was reached " + hours + " hour(s) ago at $" + timesHigh.Max() + ".");
                 }
             }
+
+            PlotChart.PlotCrypto(timesHigh);
         }
     }
 }
