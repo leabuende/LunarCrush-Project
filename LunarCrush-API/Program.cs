@@ -1,5 +1,6 @@
 ﻿using System;
 using Evolution;
+using Compare;
 
 namespace LunarCrush_API
 {
@@ -23,6 +24,9 @@ namespace LunarCrush_API
                     Console.WriteLine("Enter d for day and h for hour:");
                     string periodChoice = Console.ReadLine();
                     CryptoEvolution.CryptoTrend(periodChoice);
+                    return;
+                case 2:
+                    CompareCoins.CompareCrypto();
                     return;
                 default:
                     Console.WriteLine("Wrong input");

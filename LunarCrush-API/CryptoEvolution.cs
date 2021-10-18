@@ -30,7 +30,6 @@ namespace Evolution
             long unixDelay = unixTimeNow - unixShift;
             string options = "&time_series_indicators=high";
             string unixStart = options + "&start=" + unixDelay;
-            Console.WriteLine(unixStart);
 
             Console.WriteLine("Please enter the crypto symbol (ex: BTC)");
             string symbol = "&symbol=" + Console.ReadLine();
