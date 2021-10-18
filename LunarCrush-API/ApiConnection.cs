@@ -13,6 +13,7 @@ namespace Api
 
     public static class ApiConnection
     {
+        //apiKey is in clear because there are no limits in usage and no cost associated to it
         public static readonly string apiKey = "&key=maba1tuhx6eib93jtv485";
 
         public static JObject ApiFetch(string URL, string urlParameters, string options, string symbol)
