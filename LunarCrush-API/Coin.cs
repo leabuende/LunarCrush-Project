@@ -1,6 +1,5 @@
 using System;
 
-
 namespace LunarCrush_API
 {
     public class Coin
