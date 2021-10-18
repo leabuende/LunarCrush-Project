@@ -1,37 +1,61 @@
 ﻿using System;
 using Evolution;
+using Frequency;
 using Api;
 
 namespace LunarCrush_API
 {
     class Program
     {
-        static void Main(string[] args)
+        public static int Menu()
         {
+            int choice;
             Console.WriteLine(
                 "Make a choice:" + Environment.NewLine +
                 "1: Get a crypto's evolution within the last week or day" + Environment.NewLine +
                 "2: Get top 3 coins of the day" + Environment.NewLine +
-                "3: " + Environment.NewLine +
-                "4: " + Environment.NewLine +
-                "5: "
+                "3: Get the monthly frequency of new maxima for a particular currency." + Environment.NewLine +
+                "4: Get the monthly frequency of new maxima for 10 random cryptocurrencies" + Environment.NewLine +
+                "5: Quit"
                 );
-            int choice = Convert.ToInt32(Console.ReadLine());
-
-            switch (choice)
+            do
             {
-                case 1:
+                Console.WriteLine("Please choose a valid option :");
+                int.TryParse(Console.ReadLine(), out var result);
+                choice = result;
+            } while (choice < 1 ^ choice > 5);
+            return choice;
+        }
+
+        static void Main(string[] args)
+        {
+            int choice = 0;
+
+            while (choice != 5)
+            {
+                choice = Menu();
+
+                if (choice == 1)
+                {
                     Console.WriteLine("Enter d for day and h for hour:");
                     string periodChoice = Console.ReadLine();
                     CryptoEvolution.CryptoEvolutionHour(periodChoice);
-                    return;
-                case 2:
+                }
+                else if (choice == 2)
+                {
                     CoinOfTheDay.getFullInfo();
-                    return;
-                default:
-                    Console.WriteLine("Wrong input");
-                    break;
+                }
+                else if (choice == 3)
+                {
+                    Console.WriteLine("Enter the symbol (For example : BTC) :");
+                    CryptoFrequency.CryptoFrequencyMonth(Console.ReadLine());
+                }
+                else if (choice == 4)
+                {
+                    CryptoFrequency.CryptoFrequencyTop();
+                }
             }
+            Console.WriteLine("Thanks !");
         }
     }
 }
