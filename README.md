@@ -1,28 +1,8 @@
-<div id="top"></div>
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
+
 -->
-
-
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+[![Contributors][contributors-shield]][https://github.com/leabuende/LunarCrush-Project/graphs/contributors]
+[![Issues][issues-shield]][https://github.com/leabuende/LunarCrush-Project/issues]
+[![LinkedIn][linkedin-shield]][https://www.linkedin.com/in/l%C3%A9a-buend%C3%A9-65b440174/]
 
 
 
@@ -79,7 +59,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<img width="1222" alt="Capture d’écran 2021-10-19 à 01 23 22" src="https://user-images.githubusercontent.com/46668755/137819464-8f59b9b5-986d-4ae6-a896-be5171eeeca1.png">
+<img width="1000" alt="Capture d’écran 2021-10-19 à 01 23 22" src="https://user-images.githubusercontent.com/46668755/137819464-8f59b9b5-986d-4ae6-a896-be5171eeeca1.png">
 
 In this project, we had to find diverse ways to extract information from the LunarCrush API, interpret it and 
 
