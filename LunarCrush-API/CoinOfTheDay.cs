@@ -7,29 +7,6 @@ using Api;
 
 namespace LunarCrush_API
 {
-
-    public class Coin
-    {
-        private string symbol;
-        private int cotd;
-
-        public Coin(string symbol, int cotd)
-        {
-            this.symbol = symbol;
-            this.cotd = cotd;
-        }
-
-        public string Symbol
-        {
-            get { return symbol; }
-        }
-
-        public int Cotd
-        {
-            get { return cotd; }
-        }
-    }
-
     public static class CoinOfTheDay
     {
         public static readonly string URL = "https://api.lunarcrush.com/v2?data=coinoftheday";
@@ -45,13 +22,15 @@ namespace LunarCrush_API
             JArray responseList = (JArray)response["data"]["history"];
             List<Coin> coinsList = new List<Coin>();
 
+            Console.WriteLine("\n\n Top 3 coins of the day ! \n");
             for (int i = responseList.Count - 1; i > responseList.Count - 4; i--)
             {
                 var rank = responseList.Count - i;
                 coinsList.Add(new Coin(responseList[i]["symbol"].ToString(), int.Parse(responseList[i]["last_cotd"].ToString())));
+                Console.WriteLine(rank + " : " + responseList[i]["symbol"] + " - " + responseList[i]["name"]);
             }
 
-            PlotChart.PlotCryptoOfTheDay(coinsList);
+            // PlotChart.PlotCryptoOfTheDay(coinsList);
         }
     }
 }
