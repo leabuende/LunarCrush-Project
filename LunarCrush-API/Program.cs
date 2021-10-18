@@ -11,7 +11,7 @@ namespace LunarCrush_API
             Console.WriteLine(
                 "Make a choice:" + Environment.NewLine +
                 "1: Get a crypto's evolution within the last week or day" + Environment.NewLine +
-                "2: Get coin of the day" + Environment.NewLine +
+                "2: Get top 3 coins of the day" + Environment.NewLine +
                 "3: " + Environment.NewLine +
                 "4: " + Environment.NewLine +
                 "5: "
