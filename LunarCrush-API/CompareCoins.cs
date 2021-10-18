@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Api;
+using Table;
 using Newtonsoft.Json.Linq;
 
 namespace Compare
@@ -10,12 +11,12 @@ namespace Compare
     {
         private const string URL = "https://api.lunarcrush.com/v2?data=assets";
 
-        private static JToken RetrieveTimeSeries(JObject coin)
+        public static JToken RetrieveTimeSeries(JObject coin)
         {
             return coin["data"][0]["timeSeries"];
         }
 
-        private static float DiffLowHigh(JToken coin)
+        public static float DiffLowHigh(JToken coin)
         {
             List<float> low = new List<float>();
             List<float> high = new List<float>();
@@ -38,7 +39,7 @@ namespace Compare
             return max - min;
         }
 
-        private static float[] AverageOpeningClosing(JToken coin)
+        public static float[] AverageOpeningClosing(JToken coin)
         {
             List<float> openings = new List<float>();
             List<float> closings = new List<float>();
@@ -47,8 +48,8 @@ namespace Compare
             {
                 try
                 {
-                    openings.Add((float)item["opening"]);
-                    closings.Add((float)item["closing"]);
+                    openings.Add((float)item["open"]);
+                    closings.Add((float)item["close"]);
                 }
                 catch (Exception)
                 {
@@ -57,29 +58,29 @@ namespace Compare
                 }
             }
             var averageOpening = openings.Average();
-            var averageClosing = openings.Average();
+            var averageClosing = closings.Average();
 
             float[] averages = { averageOpening, averageClosing };
 
             return averages;
         }
 
-        private static float ActualPrice(JObject coin)
+        public static float ActualPrice(JObject coin)
         {
             return (float)coin["data"][0]["price"];
         }
 
-        private static float MarketCap(JObject coin)
+        public static float MarketCap(JObject coin)
         {
             return (float)coin["data"][0]["market_cap"];
         }
 
-        private static float MaxSupply(JObject coin)
+        public static float MaxSupply(JObject coin)
         {
             return (float)coin["data"][0]["max_supply"];
         }
 
-        private static float AverageVolume(JToken coin)
+        public static float AverageVolume(JToken coin)
         {
             List<float> volumes = new List<float>();
 
@@ -99,7 +100,7 @@ namespace Compare
             return averageVolume;
         }
 
-        private static float AverageVolatility(JToken coin)
+        public static float AverageVolatility(JToken coin)
         {
             List<float> volatilities = new List<float>();
 
@@ -136,7 +137,9 @@ namespace Compare
             string symbolCoin2 = "&symbol=" + Console.ReadLine();
 
             var coin1 = ApiConnection.ApiFetch(URL, urlParameters, symbolCoin1, unixStart);
-            var coin2 = ApiConnection.ApiFetch(URL, urlParameters, symbolCoin2, unixStart);            
+            var coin2 = ApiConnection.ApiFetch(URL, urlParameters, symbolCoin2, unixStart);
+
+            TableChart.DrawTable(coin1, coin2);
         }
     }
 }
