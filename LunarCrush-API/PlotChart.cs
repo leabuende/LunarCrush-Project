@@ -30,7 +30,7 @@ namespace ChartNet
             //     keys.Add(item.Symbol);
             // }
 
-            GenericChart.GenericChart chart = Chart2D.Chart.Bar(values, keys);
+            // GenericChart.GenericChart chart = Chart2D.Chart.Bar(values, keys);
         }
     }
 }
