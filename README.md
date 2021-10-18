@@ -1,9 +1,4 @@
 
--->
-[![Contributors][contributors-shield]][https://github.com/leabuende/LunarCrush-Project/graphs/contributors]
-[![Issues][issues-shield]][https://github.com/leabuende/LunarCrush-Project/issues]
-[![LinkedIn][linkedin-shield]][https://www.linkedin.com/in/l%C3%A9a-buend%C3%A9-65b440174/]
-
 
 
 <!-- PROJECT LOGO -->
