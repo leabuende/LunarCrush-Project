@@ -11,7 +11,7 @@ namespace LunarCrush_API
             Console.WriteLine(
                 "Make a choice:" + Environment.NewLine +
                 "1: Get a crypto's evolution within the last week or day" + Environment.NewLine +
-                "2: " + Environment.NewLine +
+                "2: Get coin of the day" + Environment.NewLine +
                 "3: " + Environment.NewLine +
                 "4: " + Environment.NewLine +
                 "5: "
@@ -24,6 +24,9 @@ namespace LunarCrush_API
                     Console.WriteLine("Enter d for day and h for hour:");
                     string periodChoice = Console.ReadLine();
                     CryptoEvolution.CryptoEvolutionHour(periodChoice);
+                    return;
+                case 2:
+                    CoinOfTheDay.getFullInfo();
                     return;
                 default:
                     Console.WriteLine("Wrong input");
