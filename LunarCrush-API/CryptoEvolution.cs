@@ -44,7 +44,7 @@ namespace Evolution
                 {
                     timesHigh.Add((int)item["high"]);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     timesHigh.Add(0);
                 }
