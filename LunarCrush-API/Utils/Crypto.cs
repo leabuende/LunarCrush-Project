@@ -9,6 +9,7 @@ namespace Frequency
             this.frequency = frequency;
             this.name = name;
         }
+
         public int frequency { get; set; }
         public string name { get; set; }
     }
