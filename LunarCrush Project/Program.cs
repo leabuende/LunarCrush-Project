@@ -1,26 +1,32 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace Api
+namespace ConsoleProgram
 {
     public class DataObject
     {
         public string Name { get; set; }
     }
 
-    public static class ApiConnection
+    public class Program
     {
-        //apiKey is in clear because there are no limits in usage and no cost associated to it
-        public static readonly string apiKey = "&key=maba1tuhx6eib93jtv485";
+        private const string URL = "https://api.lunarcrush.com/v2?data=assets";
+        private string urlParameters = "&key=maba1tuhx6eib93jtv485";
+        private string symbol = "&symbol=LTC";
 
-        public static JObject ApiFetch(string URL, string urlParameters, string options, string symbol)
+        static void Main(string[] args)
         {
-            var parameters = urlParameters + symbol + options;
+            var program = new Program();
+
+            var parameters = program.urlParameters + program.symbol;
 
             HttpClient client = new HttpClient();
+
+            Console.WriteLine(client.BaseAddress);
 
             client.DefaultRequestHeaders.Accept.Add(
             new MediaTypeWithQualityHeaderValue("application/json"));
@@ -30,14 +36,14 @@ namespace Api
             {
                 var dataObjects = response.Content.ReadAsStringAsync().Result;
                 JObject data = (JObject)JsonConvert.DeserializeObject(dataObjects);
-                client.Dispose();
-                return data;
+                Console.Write(data["config"]);
             }
             else
             {
                 Console.WriteLine("{0} ({1})", (int)response.StatusCode, response.ReasonPhrase);
-                return null;
             }
+
+            client.Dispose();
         }
     }
 }
