@@ -2,7 +2,7 @@ using System;
 using Evolution;
 using Compare;
 using Frequency;
-using Api;
+using Twitter;
 
 namespace LunarCrush_API
 {
@@ -18,14 +18,15 @@ namespace LunarCrush_API
                 "3: Get the monthly frequency of new maxima for a particular currency." + Environment.NewLine +
                 "4: Get the monthly frequency of new maxima for 10 random cryptocurrencies" + Environment.NewLine +
                 "5: Compare 2 coins" + Environment.NewLine +
-                "6: Quit"
+                "6: Correlation" + Environment.NewLine +
+                "7: Quit"
                 );
             do
             {
                 Console.WriteLine("Please choose a valid option :");
                 int.TryParse(Console.ReadLine(), out var result);
                 choice = result;
-            } while (choice < 1 || choice > 6);
+            } while (choice < 1 || choice > 7);
             return choice;
         }
 
@@ -33,7 +34,7 @@ namespace LunarCrush_API
         {
             int choice = 0;
 
-            while (choice != 6)
+            while (choice != 7)
             {
                 choice = Menu();
 
@@ -59,6 +60,10 @@ namespace LunarCrush_API
                 else if (choice == 5)
                 {
                     CompareCoins.CompareCrypto();
+                }
+                else if (choice == 6)
+                {
+                    TwitterCorrelation.CorrelateData();
                 }
             }
             Console.WriteLine("Thanks !");
